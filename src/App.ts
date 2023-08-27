@@ -2,9 +2,10 @@ import express from "express";
 import { router } from "./controllers";
 
 const app = express();
+const appPort = process.env.APP_PORT ?? 3000;
 
 app.use("/", router);
 
-app.listen(3000, () => {
-  console.log("Running on port 3000");
+app.listen(appPort, () => {
+  console.log(`Running on port ${appPort}`);
 });

@@ -15,18 +15,12 @@ services:
       - .:/app/
       - /app/node_modules/
     ports:
-      - 3000:3000
+      - 443:443
     depends_on:
       - db
-    command: npm run dev
+    command: npm run prod
   db:
     image: postgres:15
     environment:
       - POSTGRES_USER=app
       - POSTGRES_PASSWORD=app
-    ports:
-      - 3001:5432
-  adminer:
-    image: adminer
-    ports:
-      - 3002:8080
