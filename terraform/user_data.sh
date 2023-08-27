@@ -9,9 +9,10 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo systemctl start docker
 sudo yum install git -y
 
+cd app
 git clone --branch main https://github.com/arceorg/HellManagerBackend.git
-sudo chown -R ec2-user app
-cd app/HellManagerBackend
+sudo chown -R ec2-user ../app
+cd HellManagerBackend
 curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -
 sudo yum install -y nodejs
 npm i
