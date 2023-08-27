@@ -34,9 +34,11 @@ To add code the process would be as follows. being in my local machine in the ma
 
 For example for this task:
 
+
    <img width="370" alt="image" src="https://github.com/arceorg/HellManagerBackend/assets/49419461/f0d7d8a9-c7f9-4017-962f-5b5c0208831d">
 
 Would be:
+
 
   <img width="370" alt="image" src="https://github.com/arceorg/HellManagerBackend/assets/49419461/d3c77dc7-71f9-4a4b-8a63-765a2dfa6870">
 
