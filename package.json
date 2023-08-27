@@ -1,0 +1,32 @@
+{
+  "name": "expres",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-app": "docker-compose build ",
+    "stop-app": "docker-compose down",
+    "start-app": "docker-compose up -d && docker-compose logs app -f",
+    "dev": "nodemon",
+    "prettier": "prettier --write '{src,test,scripts}/**/*.ts' && prettier --write '**/*.{yml,yaml}'",
+    "fix-lint": "eslint '*/**/*.{ts,tsx}' --quiet --fix && npm run prettier"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.4.4",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "eslint": "^8.45.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@types/pg": "^8.10.2",
+    "express": "^4.18.2",
+    "pg": "^8.11.1",
+    "ts-node": "^10.9.1"
+  }
+}
