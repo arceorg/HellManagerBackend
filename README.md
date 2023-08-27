@@ -51,5 +51,9 @@ And then I do all my things in that branch and push
 
 And create a pull request that you can merge yourself:
 
+
    <img width="370" alt="image" src="https://github.com/arceorg/HellManagerBackend/assets/49419461/46db0492-54fb-470c-b18a-b7f9984a7e33">
+   
+   <img width="370" alt="image" src="https://github.com/arceorg/HellManagerBackend/assets/49419461/38b23263-d6d3-4b04-88f3-da69b3f030dc">
+
 
