@@ -33,10 +33,12 @@ To add code the process would be as follows. being in my local machine in the ma
     git checkout -b TICKET-IDENTIFICATION
 
 For example for this task:
-    <img width="370" alt="image" src="https://github.com/arceorg/HellManagerBackend/assets/49419461/f0d7d8a9-c7f9-4017-962f-5b5c0208831d">
+
+   <img width="370" alt="image" src="https://github.com/arceorg/HellManagerBackend/assets/49419461/f0d7d8a9-c7f9-4017-962f-5b5c0208831d">
 
 Would be:
-    <img width="370" alt="image" src="https://github.com/arceorg/HellManagerBackend/assets/49419461/d3c77dc7-71f9-4a4b-8a63-765a2dfa6870">
+
+  <img width="370" alt="image" src="https://github.com/arceorg/HellManagerBackend/assets/49419461/d3c77dc7-71f9-4a4b-8a63-765a2dfa6870">
 
 
     git checkout -b SF-13
@@ -45,4 +47,7 @@ And then I do all my things in that branch and push
 
     git push origin SF-13
 
-And create a pull request that you can merge yourself
+And create a pull request that you can merge yourself:
+
+   <img width="370" alt="image" src="https://github.com/arceorg/HellManagerBackend/assets/49419461/46db0492-54fb-470c-b18a-b7f9984a7e33">
+
