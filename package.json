@@ -13,7 +13,7 @@
     "stop-prod": "sudo docker-compose -f docker-compose-prod.yml down",
     "start-prod": "npm run stop-prod && sudo docker-compose -f docker-compose-prod.yml up -d",
     "build-prod": "npx tsc && sudo docker-compose -f docker-compose-prod.yml build",
-    "prod" : "APP_PORT=443 node dist/App.js"
+    "prod" : "sudo APP_PORT=443 node dist/App.js"
   },
   "author": "",
   "license": "ISC",

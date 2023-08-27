@@ -17,4 +17,3 @@ sudo yum install -y nodejs
 npm i
 npm run build-prod
 npm run start-prod
-npm run prod
