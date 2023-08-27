@@ -25,6 +25,10 @@ Go to http://localhost:3000/ and check that you can see this message:
 
     {"message":"App is healthy!","success":true}
 
+### Do this always before push ###
+
+`npm run fix-lint`
+
 ### Automation with Jira ###
 In such a way that the Jira tickets move automatically, we are going to do the following, every time we want to upload code to a repository we are going to have the main branch where we have all the main production code, to this branch we cannot push directly, we have to create a branch and make a pull request, the name of the branch must be the same identifier of jira.
 
