@@ -10,9 +10,9 @@
     "dev": "nodemon",
     "prettier": "prettier --write '{src,test,scripts}/**/*.ts' && prettier --write '**/*.{yml,yaml}'",
     "fix-lint": "eslint '*/**/*.{ts,tsx}' --quiet --fix && npm run prettier",
-    "stop-prod": "docker-compose -f docker-compose-prod.yml down",
-    "start-prod": "npm run stop-prod && docker-compose -f docker-compose-prod.yml up -d",
-    "build-prod": "npx tsc && docker-compose -f docker-compose-prod.yml build",
+    "stop-prod": "sudo docker-compose -f docker-compose-prod.yml down",
+    "start-prod": "npm run stop-prod && sudo docker-compose -f docker-compose-prod.yml up -d",
+    "build-prod": "npx tsc && sudo docker-compose -f docker-compose-prod.yml build",
     "prod" : "APP_PORT=443 node dist/App.js"
   },
   "author": "",
