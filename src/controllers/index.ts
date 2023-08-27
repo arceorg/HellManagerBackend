@@ -10,6 +10,7 @@ router.use(json());
 router.use(logger);
 
 router.use("/health", healthRouter);
+router.use("/", healthRouter);
 
 router.use(errorHandler);
 router.use(notFound);
