@@ -13,7 +13,7 @@
     "stop-prod": "sudo docker-compose -f docker-compose-prod.yml down",
     "start-prod": "npm run stop-prod && sudo docker-compose -f docker-compose-prod.yml up -d",
     "build-prod": "npx tsc && sudo docker-compose -f docker-compose-prod.yml build",
-    "prod" : "APP_PORT=443 node dist/App.js"
+    "prod": "APP_PORT=443 node dist/App.js"
   },
   "author": "",
   "license": "ISC",
@@ -28,8 +28,15 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@types/bcrypt": "^5.0.0",
+    "@types/passport": "^1.0.12",
+    "@types/passport-local": "^1.0.35",
     "@types/pg": "^8.10.2",
+    "bcrypt": "^5.1.1",
     "express": "^4.18.2",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
     "pg": "^8.11.1",
     "ts-node": "^10.9.1"
   }
