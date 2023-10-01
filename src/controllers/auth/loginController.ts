@@ -4,10 +4,9 @@ import { loginInteractor } from "../../interactors/auth/loginInteractor";
 export const loginController = [
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      console.log(req.user)
-      const user = req.user ?? { id: "testId", role: "admin"  };
-      const { data,message } = loginInteractor(user); 
-      res.json({message, ...data});
+      const user = req.user;
+      const { data, message } = loginInteractor(user);
+      res.json({ message, ...data });
     } catch (error) {
       next(error);
     }

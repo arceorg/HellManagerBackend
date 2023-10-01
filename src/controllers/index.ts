@@ -4,12 +4,13 @@ import { notFound } from "./middlewares/notFound";
 import { healthRouter } from "./routes/healthRouter";
 import { authRouter } from "./routes/authRouter";
 import { logger } from "./middlewares/loggerRequests";
-import { AuthStrategy, LocalStrategy } from "../auth/strategies";
+import { AuthStrategy, JwtStrategy, LocalStrategy } from "../auth/strategies";
 import passport from "passport";
 
 export const router = Router();
 
 passport.use(AuthStrategy.LOCAL_STRATEGY, LocalStrategy);
+passport.use(AuthStrategy.JWT_STRATEGY, JwtStrategy);
 router.use(passport.initialize());
 
 router.use(json());

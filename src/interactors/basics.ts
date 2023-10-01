@@ -1,5 +1,5 @@
 export interface InteractorResponseModel {
-    data: any;
-    message: string;
-    success: boolean;
+  data: any;
+  message: string;
+  success: boolean;
 }

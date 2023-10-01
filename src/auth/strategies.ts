@@ -1,17 +1,21 @@
 import { unauthorized } from "@hapi/boom";
 import { compare, hashSync } from "bcrypt";
 import passport from "passport";
-import { Strategy } from "passport-local";
+import { ExtractJwt } from "passport-jwt";
+import { Strategy as StrategyLocal } from "passport-local";
+import { Strategy as StrategyJWT } from "passport-jwt";
+import { SECRET_JWT } from "./tokenSign";
 
 export enum AuthStrategy {
   LOCAL_STRATEGY = "local",
+  JWT_STRATEGY = "jwt",
 }
 
-export const LocalStrategy = new Strategy(
+export const LocalStrategy = new StrategyLocal(
   { usernameField: "email" },
-  async (username: string, password: string, done) => {
+  async (email: string, password: string, done) => {
     try {
-      const user = { email: "x", password: hashSync("password", 1) };
+      const user = { email, password: hashSync(password, 1), role: "test", id: "test" };
       const isMatch = await compare(password, user.password);
       if (!isMatch) {
         done(unauthorized(), false);
@@ -20,6 +24,16 @@ export const LocalStrategy = new Strategy(
     } catch (error) {
       done(error, false);
     }
+  }
+);
+
+export const JwtStrategy = new StrategyJWT(
+  {
+    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+    secretOrKey: SECRET_JWT,
+  },
+  (payloadL: any, done) => {
+    return done(null, payloadL);
   }
 );
 
