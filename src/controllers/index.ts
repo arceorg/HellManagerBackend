@@ -3,7 +3,7 @@ import { errorHandler } from "./middlewares/errorHandler";
 import { notFound } from "./middlewares/notFound";
 import { healthRouter } from "./routes/healthRouter";
 import { authRouter } from "./routes/authRouter";
-import { logger } from "../utils/utils";
+import { logger } from "./middlewares/loggerRequests";
 import { AuthStrategy, LocalStrategy } from "../auth/strategies";
 import passport from "passport";
 

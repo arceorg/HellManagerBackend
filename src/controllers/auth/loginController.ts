@@ -1,9 +1,13 @@
 import { NextFunction, Request, Response } from "express";
+import { loginInteractor } from "../../interactors/auth/loginInteractor";
 
 export const loginController = [
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      res.json({message: "The authentication pass"});
+      console.log(req.user)
+      const user = req.user ?? { id: "testId", role: "admin"  };
+      const { data,message } = loginInteractor(user); 
+      res.json({message, ...data});
     } catch (error) {
       next(error);
     }
