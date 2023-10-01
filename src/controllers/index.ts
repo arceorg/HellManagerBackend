@@ -2,15 +2,23 @@ import { Router, json } from "express";
 import { errorHandler } from "./middlewares/errorHandler";
 import { notFound } from "./middlewares/notFound";
 import { healthRouter } from "./routes/healthRouter";
-import { logger } from "../utils/utils";
+import { authRouter } from "./routes/authRouter";
+import { logger } from "./middlewares/loggerRequests";
+import { AuthStrategy, JwtStrategy, LocalStrategy } from "../auth/strategies";
+import passport from "passport";
 
 export const router = Router();
+
+passport.use(AuthStrategy.LOCAL_STRATEGY, LocalStrategy);
+passport.use(AuthStrategy.JWT_STRATEGY, JwtStrategy);
+router.use(passport.initialize());
 
 router.use(json());
 router.use(logger);
 
 router.use("/health", healthRouter);
 router.use("/", healthRouter);
+router.use("/auth", authRouter);
 
-router.use(errorHandler);
 router.use(notFound);
+router.use(errorHandler);
