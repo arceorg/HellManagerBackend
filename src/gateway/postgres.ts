@@ -4,11 +4,14 @@ import { Career } from "../entities/career";
 import { Teacher } from "../entities/teacher";
 import { Administrator } from "../entities/administrator";
 import { Student } from "../entities/student";
-import { Subject } from "typeorm/persistence/Subject";
-import { Group } from "../entities/group";
+import { Subject } from "../entities/subject";
 import { TeacherSubject } from "../entities/teacherSubject";
+import { Enrollment } from "../entities/enrollment";
+import { Note } from "../entities/note";
+import { Schedule } from "../entities/schedule";
+import { Group } from "../entities/group";
 
-const TABLES = [User, Career, Teacher, Administrator, Student, Subject, Group, TeacherSubject];
+const TABLES = [User, Career, Teacher, Administrator, Student, Subject, Group, TeacherSubject, Enrollment,Note,Schedule];
 
 export const AppDataSource = new DataSource({
   type: "postgres",

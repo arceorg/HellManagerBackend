@@ -1,6 +1,5 @@
 import { Column, Entity } from "typeorm";
 import { BasicEntity } from "./basics";
-import { hashSync } from "bcrypt";
 
 @Entity()
 export class User extends BasicEntity {
@@ -43,7 +42,7 @@ export class User extends BasicEntity {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
-    this.password = hashSync(password, 1);
+    this.password = password;
     this.role = role;
     this.birthday = birthday;
     this.identificationNumber = identificationNumber;

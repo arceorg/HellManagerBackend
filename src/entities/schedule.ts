@@ -1,8 +1,9 @@
 import { Column, Entity, ManyToOne } from "typeorm";
 import { Group } from "./group";
+import { BasicEntity } from "./basics";
 
 @Entity()
-export class Schedule {
+export class Schedule extends BasicEntity {
   @ManyToOne(() => Group, (group) => group.schedules)
   public group: Group;
 
@@ -16,5 +17,14 @@ export class Schedule {
   public to: string;
 
   @Column()
-  public day: string;
+  public day: number;
+
+  constructor(group: Group, classroom:string, from:string, to:string, day:number){
+    super()
+    this.group = group;
+    this.classroom = classroom;
+    this.from = from;
+    this.to = to;
+    this.day = day;
+  }
 }

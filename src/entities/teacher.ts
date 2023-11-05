@@ -1,8 +1,9 @@
-import { BaseEntity, Column, Entity, JoinColumn, OneToOne } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne } from "typeorm";
 import { User } from "./user";
+import { BasicEntity } from "./basics";
 
 @Entity()
-export class Teacher extends BaseEntity {
+export class Teacher extends BasicEntity {
   @OneToOne(() => User)
   @JoinColumn()
   public user: User;

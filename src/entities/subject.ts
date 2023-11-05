@@ -1,11 +1,12 @@
-import { BaseEntity, Column, Entity, ManyToOne, OneToMany } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany } from "typeorm";
 import { Career } from "./career";
 import { Group } from "./group";
 import { Note } from "./note";
 import { Enrollment } from "./enrollment";
+import { BasicEntity } from "./basics";
 
 @Entity()
-export class Subject extends BaseEntity {
+export class Subject extends BasicEntity {
   @Column()
   public name: string;
 

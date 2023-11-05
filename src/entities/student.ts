@@ -16,7 +16,7 @@ export class Student extends BasicEntity {
   public career: Career;
 
   @OneToMany(() => Note, (note) => note.student)
-  notes: Note[];
+  public notes: Note[];
 
   @OneToMany(() => Enrollment, (enrollment) => enrollment.student)
   public enrollments: Enrollment[];

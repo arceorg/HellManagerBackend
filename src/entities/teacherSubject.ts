@@ -1,10 +1,11 @@
-import { BaseEntity, Entity, JoinColumn, OneToOne } from "typeorm";
+import { Entity, JoinColumn, OneToOne } from "typeorm";
 import { Subject } from "./subject";
 import { Teacher } from "./teacher";
 import { Group } from "./group";
+import { BasicEntity } from "./basics";
 
 @Entity()
-export class TeacherSubject extends BaseEntity {
+export class TeacherSubject extends BasicEntity {
   @OneToOne(() => Subject)
   @JoinColumn()
   public subject: Subject;
