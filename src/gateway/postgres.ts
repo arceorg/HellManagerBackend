@@ -1,7 +1,14 @@
 import { DataSource } from "typeorm";
 import { User } from "../entities/user";
+import { Career } from "../entities/career";
+import { Teacher } from "../entities/teacher";
+import { Administrator } from "../entities/administrator";
+import { Student } from "../entities/student";
+import { Subject } from "typeorm/persistence/Subject";
+import { Group } from "../entities/group";
+import { TeacherSubject } from "../entities/teacherSubject";
 
-const TABLES = [User];
+const TABLES = [User, Career, Teacher, Administrator, Student, Subject, Group, TeacherSubject];
 
 export const AppDataSource = new DataSource({
   type: "postgres",
