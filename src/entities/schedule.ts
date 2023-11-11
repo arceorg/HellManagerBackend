@@ -19,8 +19,8 @@ export class Schedule extends BasicEntity {
   @Column()
   public day: number;
 
-  constructor(group: Group, classroom:string, from:string, to:string, day:number){
-    super()
+  constructor(group: Group, classroom: string, from: string, to: string, day: number) {
+    super();
     this.group = group;
     this.classroom = classroom;
     this.from = from;

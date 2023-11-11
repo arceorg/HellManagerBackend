@@ -11,7 +11,19 @@ import { Note } from "../entities/note";
 import { Schedule } from "../entities/schedule";
 import { Group } from "../entities/group";
 
-const TABLES = [User, Career, Teacher, Administrator, Student, Subject, Group, TeacherSubject, Enrollment,Note,Schedule];
+const TABLES = [
+  User,
+  Career,
+  Teacher,
+  Administrator,
+  Student,
+  Subject,
+  Group,
+  TeacherSubject,
+  Enrollment,
+  Note,
+  Schedule,
+];
 
 export const AppDataSource = new DataSource({
   type: "postgres",
