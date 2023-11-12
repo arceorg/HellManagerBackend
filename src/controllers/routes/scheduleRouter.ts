@@ -7,5 +7,10 @@ import { UserRole } from "../../interactors/utils";
 
 export const scheduleRouter = Router();
 
-scheduleRouter.put("/", checkAuthWith([AuthStrategy.JWT_STRATEGY]),checkRoles([UserRole.ADMIN]), saveScheduleController);
+scheduleRouter.put(
+  "/",
+  checkAuthWith([AuthStrategy.JWT_STRATEGY]),
+  checkRoles([UserRole.ADMIN]),
+  saveScheduleController
+);
 scheduleRouter.get("/student/:studentId", checkAuthWith([AuthStrategy.JWT_STRATEGY]), getScheduleByStudentController);

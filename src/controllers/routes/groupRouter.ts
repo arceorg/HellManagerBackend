@@ -6,4 +6,4 @@ import { UserRole } from "../../interactors/utils";
 
 export const groupRouter = Router();
 
-groupRouter.put("/", checkAuthWith([AuthStrategy.JWT_STRATEGY]),checkRoles([UserRole.ADMIN]), saveGroupController);
+groupRouter.put("/", checkAuthWith([AuthStrategy.JWT_STRATEGY]), checkRoles([UserRole.ADMIN]), saveGroupController);

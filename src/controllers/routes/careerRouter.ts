@@ -6,4 +6,4 @@ import { UserRole } from "../../interactors/utils";
 
 export const careerRouter = Router();
 
-careerRouter.put("/", checkAuthWith([AuthStrategy.JWT_STRATEGY]),checkRoles([UserRole.ADMIN]), saveCareerController);
+careerRouter.put("/", checkAuthWith([AuthStrategy.JWT_STRATEGY]), checkRoles([UserRole.ADMIN]), saveCareerController);

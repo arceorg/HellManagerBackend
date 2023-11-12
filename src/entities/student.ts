@@ -7,11 +7,11 @@ import { Enrollment } from "./enrollment";
 
 @Entity()
 export class Student extends BasicEntity {
-  @OneToOne(() => User,{nullable:false})
+  @OneToOne(() => User, { nullable: false })
   @JoinColumn()
   public user: User;
 
-  @OneToOne(() => Career,{nullable:false})
+  @OneToOne(() => Career, { nullable: false })
   @JoinColumn()
   public career: Career;
 
