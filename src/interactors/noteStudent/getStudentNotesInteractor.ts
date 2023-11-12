@@ -7,6 +7,7 @@ import { InteractorResponseModel } from "../basics";
 export interface NoteSubject {
   value: number;
   percentage: number;
+  noteStudentId: string;
 }
 
 export interface NotePerSubject {
@@ -45,6 +46,7 @@ const buildStudentNotesResponse = (notes: Note[]): StudentNotesResponse => {
               return {
                 value: studentNote.value,
                 percentage: note.percentage,
+                noteStudentId: studentNote.id,
               };
             });
           })
