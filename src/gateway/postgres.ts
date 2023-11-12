@@ -24,7 +24,7 @@ const TABLES = [
   Enrollment,
   Note,
   Schedule,
-  NoteStudent
+  NoteStudent,
 ];
 
 export const AppDataSource = new DataSource({

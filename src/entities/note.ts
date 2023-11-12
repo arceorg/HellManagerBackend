@@ -5,7 +5,6 @@ import { NoteStudent } from "./noteStudent";
 
 @Entity()
 export class Note extends BasicEntity {
-
   @ManyToOne(() => Subject, (subject) => subject.notes)
   public subject: Subject;
 
@@ -15,7 +14,7 @@ export class Note extends BasicEntity {
   @Column()
   public percentage: number;
 
-  constructor( subject: Subject, percentage: number) {
+  constructor(subject: Subject, percentage: number) {
     super();
     this.subject = subject;
     this.percentage = percentage;

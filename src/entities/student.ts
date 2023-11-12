@@ -1,7 +1,6 @@
 import { Entity, JoinColumn, ManyToOne, OneToMany, OneToOne } from "typeorm";
 import { BasicEntity } from "./basics";
 import { User } from "./user";
-import { Note } from "./note";
 import { Career } from "./career";
 import { Enrollment } from "./enrollment";
 import { NoteStudent } from "./noteStudent";
