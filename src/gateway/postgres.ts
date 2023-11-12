@@ -10,6 +10,7 @@ import { Enrollment } from "../entities/enrollment";
 import { Note } from "../entities/note";
 import { Schedule } from "../entities/schedule";
 import { Group } from "../entities/group";
+import { NoteStudent } from "../entities/noteStudent";
 
 const TABLES = [
   User,
@@ -23,6 +24,7 @@ const TABLES = [
   Enrollment,
   Note,
   Schedule,
+  NoteStudent
 ];
 
 export const AppDataSource = new DataSource({

@@ -4,6 +4,7 @@ import { User } from "./user";
 import { Note } from "./note";
 import { Career } from "./career";
 import { Enrollment } from "./enrollment";
+import { NoteStudent } from "./noteStudent";
 
 @Entity()
 export class Student extends BasicEntity {
@@ -15,13 +16,13 @@ export class Student extends BasicEntity {
   @JoinColumn()
   public career: Career;
 
-  @OneToMany(() => Note, (note) => note.student)
-  public notes: Note[];
+  @OneToMany(() => NoteStudent, (noteStudent) => noteStudent.student)
+  public notes: NoteStudent[];
 
   @OneToMany(() => Enrollment, (enrollment) => enrollment.student)
   public enrollments: Enrollment[];
 
-  constructor(user: User, career: Career, notes: Note[], enrollments: Enrollment[]) {
+  constructor(user: User, career: Career, notes: NoteStudent[], enrollments: Enrollment[]) {
     super();
     this.user = user;
     this.career = career;

@@ -1,27 +1,23 @@
-import { Column, Entity, ManyToOne } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany } from "typeorm";
 import { BasicEntity } from "./basics";
-import { Student } from "./student";
 import { Subject } from "./subject";
+import { NoteStudent } from "./noteStudent";
 
 @Entity()
 export class Note extends BasicEntity {
-  @ManyToOne(() => Student, (student) => student.notes)
-  public student: Student;
 
   @ManyToOne(() => Subject, (subject) => subject.notes)
   public subject: Subject;
 
-  @Column()
-  public value: number;
+  @OneToMany(() => NoteStudent, (noteStudent) => noteStudent.note)
+  public values: NoteStudent[];
 
   @Column()
   public percentage: number;
 
-  constructor(student: Student, subject: Subject, value: number, percentage: number) {
+  constructor( subject: Subject, percentage: number) {
     super();
-    this.student = student;
     this.subject = subject;
-    this.value = value;
     this.percentage = percentage;
   }
 }
