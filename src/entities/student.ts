@@ -7,7 +7,7 @@ import { Enrollment } from "./enrollment";
 
 @Entity()
 export class Student extends BasicEntity {
-  @OneToOne(() => User, { nullable: false })
+  @OneToOne(() => User, { nullable: false, onDelete: "CASCADE" })
   @JoinColumn()
   public user: User;
 

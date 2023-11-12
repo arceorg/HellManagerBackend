@@ -10,6 +10,7 @@ import { scheduleRouter } from "./routes/scheduleRouter";
 import { groupRouter } from "./routes/groupRouter";
 import { studentRouter } from "./routes/studentRouter";
 import { careerRouter } from "./routes/careerRouter";
+import { subjectRouter } from "./routes/subjectRouter";
 
 export const router = Router();
 
@@ -27,6 +28,7 @@ router.use("/schedule", scheduleRouter);
 router.use("/group", groupRouter);
 router.use("/student", studentRouter);
 router.use("/career", careerRouter);
+router.use("/subject", subjectRouter);
 
 router.use(notFound);
 router.use(errorHandler);
