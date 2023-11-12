@@ -7,7 +7,8 @@ import { StudentCreationPayload } from "./saveStudentInteractor";
 interface StudentResponse extends Omit<StudentCreationPayload, "password"> {}
 
 export const getStudentInteractor = async (studentId: string): Promise<InteractorResponseModel> => {
-  const student = await gateway.findStudentById(studentId);
+  console.log(studentId)
+    const student = await gateway.findStudentById(studentId);
   if (!student) {
     throw badRequest("STUDENT_NOT_FOUND");
   }

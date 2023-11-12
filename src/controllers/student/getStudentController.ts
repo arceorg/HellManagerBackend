@@ -4,7 +4,7 @@ import { getStudentInteractor } from "../../interactors/student/getStudentIntera
 export const getStudentController = [
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const { message, data } = await getStudentInteractor(req.body);
+      const { message, data } = await getStudentInteractor(req.params.studentId);
       res.status(200).json({ message, data });
     } catch (error) {
       next(error);
