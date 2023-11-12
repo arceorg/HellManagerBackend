@@ -9,10 +9,10 @@ export class User extends BasicEntity {
   @Column()
   public lastName: string;
 
-  @Column()
+  @Column({ unique: true })
   public email: string;
 
-  @Column({ unique: true })
+  @Column()
   public password: string;
 
   @Column()

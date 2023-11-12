@@ -15,7 +15,7 @@ export class Enrollment extends BasicEntity {
   @ManyToOne(() => Group, (group) => group.enrollments)
   public group: Group;
 
-  constructor(subject: Subject, student: Student, group:Group){
+  constructor(subject: Subject, student: Student, group: Group) {
     super();
     this.student = student;
     this.group = group;

@@ -6,6 +6,13 @@ import { authRouter } from "./routes/authRouter";
 import { logger } from "./middlewares/loggerRequests";
 import { AuthStrategy, JwtStrategy, LocalStrategy } from "../auth/strategies";
 import passport from "passport";
+import { scheduleRouter } from "./routes/scheduleRouter";
+import { groupRouter } from "./routes/groupRouter";
+import { studentRouter } from "./routes/studentRouter";
+import { careerRouter } from "./routes/careerRouter";
+import { subjectRouter } from "./routes/subjectRouter";
+import { noteRouter } from "./routes/noteRouter";
+import { noteStudentRouter } from "./routes/noteStudentRouter";
 
 export const router = Router();
 
@@ -19,6 +26,13 @@ router.use(logger);
 router.use("/health", healthRouter);
 router.use("/", healthRouter);
 router.use("/auth", authRouter);
+router.use("/schedule", scheduleRouter);
+router.use("/group", groupRouter);
+router.use("/student", studentRouter);
+router.use("/career", careerRouter);
+router.use("/subject", subjectRouter);
+router.use("/note", noteRouter);
+router.use("/note-student", noteStudentRouter);
 
 router.use(notFound);
 router.use(errorHandler);
