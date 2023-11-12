@@ -10,7 +10,7 @@ export const findNoteById = async (noteId: string): Promise<Note> => {
   return note;
 };
 
-export const getNotesByStudentId = async (studentId: string): Promise<Note[]> => {
+export const findNotesByStudentId = async (studentId: string): Promise<Note[]> => {
   const notes = await AppDataSource.manager.find(Note, {
     where: { values: { student: { id: studentId } } },
     relations: { subject: true, values: true },
