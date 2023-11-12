@@ -12,6 +12,7 @@ import { studentRouter } from "./routes/studentRouter";
 import { careerRouter } from "./routes/careerRouter";
 import { subjectRouter } from "./routes/subjectRouter";
 import { noteRouter } from "./routes/noteRouter";
+import { noteStudentRouter } from "./routes/noteStudentRouter";
 
 export const router = Router();
 
@@ -31,6 +32,7 @@ router.use("/student", studentRouter);
 router.use("/career", careerRouter);
 router.use("/subject", subjectRouter);
 router.use("/note", noteRouter);
+router.use("/note-student", noteStudentRouter);
 
 router.use(notFound);
 router.use(errorHandler);

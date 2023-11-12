@@ -1,9 +1,10 @@
-import { Column, Entity, ManyToOne } from "typeorm";
+import { Column, Entity, Index, ManyToOne } from "typeorm";
 import { BasicEntity } from "./basics";
 import { Student } from "./student";
 import { Note } from "./note";
 
 @Entity()
+@Index(["note", "student"], { unique: true })
 export class NoteStudent extends BasicEntity {
   @ManyToOne(() => Student, (student) => student.notes)
   public student: Student;

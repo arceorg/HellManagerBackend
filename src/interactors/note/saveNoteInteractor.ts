@@ -17,7 +17,6 @@ export const saveNoteInteractor = async (
     throw badRequest("SUBJECT_NOT_FOUND");
   }
   const note = buildNote(noteCreationPayload, subject);
-
   await gateway.saveNote(note);
 
   return {

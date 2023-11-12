@@ -10,4 +10,8 @@ export class BasicEntity {
 
   @UpdateDateColumn()
   public updatedAt: Date;
+
+  constructor() {
+    this.id = uuid();
+  }
 }
