@@ -6,6 +6,8 @@ import { authRouter } from "./routes/authRouter";
 import { logger } from "./middlewares/loggerRequests";
 import { AuthStrategy, JwtStrategy, LocalStrategy } from "../auth/strategies";
 import passport from "passport";
+import { scheduleRouter } from "./routes/scheduleRouter";
+import { groupRouter } from "./routes/groupRouter";
 
 export const router = Router();
 
@@ -19,6 +21,9 @@ router.use(logger);
 router.use("/health", healthRouter);
 router.use("/", healthRouter);
 router.use("/auth", authRouter);
+router.use("/schedule", scheduleRouter);
+router.use("/group", groupRouter);
 
 router.use(notFound);
 router.use(errorHandler);
+//AGREGAR LA CREACION DE USUARIOS
