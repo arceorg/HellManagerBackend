@@ -1,4 +1,4 @@
-import { Entity, JoinColumn, OneToMany, OneToOne } from "typeorm";
+import { Entity, JoinColumn, ManyToOne, OneToMany, OneToOne } from "typeorm";
 import { BasicEntity } from "./basics";
 import { User } from "./user";
 import { Note } from "./note";
@@ -11,7 +11,7 @@ export class Student extends BasicEntity {
   @JoinColumn()
   public user: User;
 
-  @OneToOne(() => Career, { nullable: false })
+  @ManyToOne(() => Career,(career)=>career.students, { nullable: false })
   @JoinColumn()
   public career: Career;
 

@@ -6,7 +6,7 @@ import { BasicEntity } from "./basics";
 
 @Entity()
 export class Group extends BasicEntity {
-  @ManyToOne(() => Subject, (subject) => subject.groups)
+  @ManyToOne(() => Subject, (subject) => subject.groups, {nullable:false})
   public subject: Subject;
 
   @Column()

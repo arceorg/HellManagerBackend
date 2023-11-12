@@ -12,7 +12,7 @@ export class User extends BasicEntity {
   @Column({ unique: true })
   public email: string;
 
-  @Column({ unique: true })
+  @Column()
   public password: string;
 
   @Column()

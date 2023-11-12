@@ -10,7 +10,7 @@ export class Subject extends BasicEntity {
   @Column()
   public name: string;
 
-  @ManyToOne(() => Career, (career) => career.subjects)
+  @ManyToOne(() => Career, (career) => career.subjects,{nullable:false, onDelete:"CASCADE"})
   public career: Career;
 
   @OneToMany(() => Group, (group) => group.subject)
@@ -19,7 +19,7 @@ export class Subject extends BasicEntity {
   @Column()
   public type: string;
 
-  @Column()
+  @Column({unique:true})
   public code: string;
 
   @OneToMany(() => Note, (note) => note.subject)
