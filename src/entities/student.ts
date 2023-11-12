@@ -11,7 +11,7 @@ export class Student extends BasicEntity {
   @JoinColumn()
   public user: User;
 
-  @ManyToOne(() => Career,(career)=>career.students, { nullable: false })
+  @ManyToOne(() => Career, (career) => career.students, { nullable: false })
   @JoinColumn()
   public career: Career;
 

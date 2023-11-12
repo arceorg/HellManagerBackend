@@ -6,6 +6,6 @@ export const saveStudent = async (student: Student): Promise<void> => {
   await AppDataSource.manager.save(entities);
 };
 
-export const findStudentById = async (studentId:string): Promise<Student> => {
-    return AppDataSource.manager.findOne(Student, {where:{id:studentId},relations:{user:true}})
-}
+export const findStudentById = async (studentId: string): Promise<Student> => {
+  return AppDataSource.manager.findOne(Student, { where: { id: studentId }, relations: { user: true } });
+};

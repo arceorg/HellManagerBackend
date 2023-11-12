@@ -4,8 +4,8 @@ import { saveSubjectInteractor } from "../../interactors/subject/saveSubjectInte
 export const saveSubjectController = [
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const {message, data} = await saveSubjectInteractor(req.body);
-      res.status(201).json({message, data});
+      const { message, data } = await saveSubjectInteractor(req.body);
+      res.status(201).json({ message, data });
     } catch (error) {
       next(error);
     }

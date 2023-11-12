@@ -17,5 +17,5 @@ export const gateway = {
   saveStudent,
   saveCareer,
   saveSubject,
-  findStudentById
+  findStudentById,
 };
