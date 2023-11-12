@@ -14,5 +14,5 @@ export const gateway = {
   saveGroup,
   findScheduleByStudentId,
   findCareerById,
-  saveStudent
+  saveStudent,
 };

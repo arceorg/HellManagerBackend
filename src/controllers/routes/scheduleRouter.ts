@@ -6,4 +6,4 @@ import { getScheduleByStudentController } from "../schedule/getScheduleByStudent
 export const scheduleRouter = Router();
 
 scheduleRouter.put("/", checkAuthWith([AuthStrategy.JWT_STRATEGY]), saveScheduleController);
-scheduleRouter.get("/student/:studentId",checkAuthWith([AuthStrategy.JWT_STRATEGY]), getScheduleByStudentController);
+scheduleRouter.get("/student/:studentId", checkAuthWith([AuthStrategy.JWT_STRATEGY]), getScheduleByStudentController);
