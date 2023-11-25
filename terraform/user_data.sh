@@ -13,8 +13,10 @@ cd app
 git clone --branch main https://github.com/arceorg/HellManagerBackend.git
 sudo chown -R ec2-user ../app
 cd HellManagerBackend
-curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -
-sudo yum install -y nodejs
+sudo su
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install
 npm i
 npm run build-prod
 npm run start-prod
