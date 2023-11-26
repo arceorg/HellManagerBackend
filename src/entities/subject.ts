@@ -4,6 +4,7 @@ import { Group } from "./group";
 import { Note } from "./note";
 import { Enrollment } from "./enrollment";
 import { BasicEntity } from "./basics";
+import { SubjectType } from "../interactors/subject/saveSubjectInteractor";
 
 @Entity()
 export class Subject extends BasicEntity {
@@ -17,7 +18,7 @@ export class Subject extends BasicEntity {
   public groups: Group[];
 
   @Column()
-  public type: string;
+  public type: SubjectType;
 
   @Column({ unique: true })
   public code: string;
@@ -32,7 +33,7 @@ export class Subject extends BasicEntity {
     name: string,
     career: Career,
     groups: Group[],
-    type: string,
+    type: SubjectType,
     code: string,
     notes: Note[],
     enrollments: Enrollment[]

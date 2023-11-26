@@ -8,7 +8,10 @@ export const saveSchedule = async (schedule: Schedule): Promise<void> => {
 };
 
 export const findSchedulesByGroupIds = async (groupIds: string[]): Promise<Schedule[]> => {
-  const schedules = await AppDataSource.manager.find(Schedule, { where: { id: In(groupIds) } });
+  const schedules = await AppDataSource.manager.find(Schedule, {
+    where: { group: { id: In(groupIds) } },
+    relations: { group: true },
+  });
   return schedules;
 };
 
@@ -21,7 +24,7 @@ export const findScheduleByStudentId = async (studentId: string): Promise<Schedu
   for (const enrollment of enrollments) {
     const schedule = await AppDataSource.manager.findOne(Schedule, {
       where: { group: { id: enrollment.group.id } },
-      relations: { group: true },
+      relations: { group: { subject: true } },
     });
     schedules.push(schedule);
   }

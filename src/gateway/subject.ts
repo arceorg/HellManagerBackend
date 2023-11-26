@@ -12,7 +12,7 @@ export const saveSubject = async (subject: Subject): Promise<void> => {
 export const findSubjectsByCarerId = async (carerId: string): Promise<Subject[]> => {
   const subjects = await AppDataSource.manager.find(Subject, {
     where: { career: { id: carerId } },
-    relations: { groups: true },
+    relations: { groups: { subject: true } },
   });
   return subjects;
 };

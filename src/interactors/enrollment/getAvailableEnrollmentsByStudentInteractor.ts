@@ -3,6 +3,7 @@ import { Subject } from "../../entities/subject";
 import { gateway } from "../../gateway/basics";
 import { InteractorResponseModel } from "../basics";
 import lodash from "lodash";
+import { SubjectType } from "../subject/saveSubjectInteractor";
 
 export interface ScheduleToEnrollResponse {
   classroom: string;
@@ -18,6 +19,8 @@ interface SubjectGroupToEnrollResponse {
 
 interface SubjectToEnrollResponse {
   subjectId: string;
+  type: SubjectType;
+  name: string;
   groups: SubjectGroupToEnrollResponse[];
 }
 
@@ -63,6 +66,8 @@ const buildAvailableEnrollmentsByStudent = (
     subjects: subjects.map((subject) => {
       return {
         subjectId: subject.id,
+        type: subject.type,
+        name: subject.name,
         groups: subject.groups.map((group) => {
           return {
             groupId: group.id,

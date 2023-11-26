@@ -2,13 +2,13 @@ import { Router } from "express";
 import { AuthStrategy, checkAuthWith } from "../../auth/strategies";
 import { getAvailableEnrollmentsByStudentController } from "../enrolment/getAvailableEnrollmentsByStudentController";
 
-export const enrolmentRouter = Router();
+export const enrollmentRouter = Router();
 
-enrolmentRouter.get("/students/:studentId", checkAuthWith([AuthStrategy.JWT_STRATEGY]));
-enrolmentRouter.put("/students/:studentId", checkAuthWith([AuthStrategy.JWT_STRATEGY]));
-enrolmentRouter.put(
+enrollmentRouter.get("/students/:studentId", checkAuthWith([AuthStrategy.JWT_STRATEGY]));
+enrollmentRouter.put("/students/:studentId", checkAuthWith([AuthStrategy.JWT_STRATEGY]));
+enrollmentRouter.get(
   "/students/available-enrollments/:studentId",
   checkAuthWith([AuthStrategy.JWT_STRATEGY]),
   getAvailableEnrollmentsByStudentController
 );
-enrolmentRouter.delete("/:enrolmentId", checkAuthWith([AuthStrategy.JWT_STRATEGY]));
+enrollmentRouter.delete("/:enrolmentId", checkAuthWith([AuthStrategy.JWT_STRATEGY]));
