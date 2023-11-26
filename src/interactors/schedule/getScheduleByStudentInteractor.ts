@@ -9,6 +9,7 @@ export interface SchedulePerDay {
   to: string;
   day: number;
   groupId: string;
+  subjectName: string;
 }
 
 export interface GetScheduleResponse {
@@ -35,6 +36,7 @@ const buildScheduleResponse = (schedules: Schedule[]): GetScheduleResponse => {
         to: schedule.to,
         day: schedule.day,
         groupId: schedule.group.id,
+        subjectName: schedule.group.subject.name,
       };
     }),
   };
