@@ -1,9 +1,15 @@
+import { In } from "typeorm";
 import { Enrollment } from "../entities/enrollment";
 import { Schedule } from "../entities/schedule";
 import { AppDataSource } from "./postgres";
 
 export const saveSchedule = async (schedule: Schedule): Promise<void> => {
   await AppDataSource.manager.save(Schedule, schedule);
+};
+
+export const findSchedulesByGroupIds = async (groupIds: string[]): Promise<Schedule[]> => {
+  const schedules = await AppDataSource.manager.find(Schedule, { where: { id: In(groupIds) } });
+  return schedules;
 };
 
 export const findScheduleByStudentId = async (studentId: string): Promise<Schedule[]> => {
