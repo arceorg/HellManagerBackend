@@ -4,12 +4,18 @@ import { InteractorResponseModel } from "../basics";
 export interface UserPayload {
   sub: string;
   role: string;
+  studentId: string | null;
+  teacherId: string | null;
+  adminId: string | null;
 }
 
-export const loginInteractor = (user: any): InteractorResponseModel => {
+export const loginInteractor = (data: any): InteractorResponseModel => {
   const payload: UserPayload = {
-    sub: user.id,
-    role: user.role,
+    sub: data.user.id,
+    role: data.user.role,
+    studentId: data.student?.id ?? null,
+    teacherId: data.teacher?.id ?? null,
+    adminId: data.admin?.id ?? null,
   };
 
   return {

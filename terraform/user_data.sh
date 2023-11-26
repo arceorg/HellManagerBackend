@@ -13,10 +13,15 @@ cd app
 git clone --branch main https://github.com/arceorg/HellManagerBackend.git
 sudo chown -R ec2-user ../app
 cd HellManagerBackend
+touch changeUser.txt
 sudo su
+touch changeUserDone.txt
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+touch downloadDone.txt
 . ~/.nvm/nvm.sh
+touch activationDone.txt
 nvm install
+touch installationDone.txt
 npm i
 npm run build-prod
 npm run start-prod

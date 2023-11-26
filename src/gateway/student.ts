@@ -9,3 +9,8 @@ export const saveStudent = async (student: Student): Promise<void> => {
 export const findStudentById = async (studentId: string): Promise<Student> => {
   return AppDataSource.manager.findOne(Student, { where: { id: studentId }, relations: { user: true, career: true } });
 };
+
+export const findStudentByUserId = async (userId: string): Promise<Student> => {
+  const student = await AppDataSource.manager.findOne(Student, { where: { user: { id: userId } } });
+  return student;
+};
