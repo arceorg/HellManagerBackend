@@ -6,6 +6,7 @@ import { Strategy as StrategyLocal } from "passport-local";
 import { Strategy as StrategyJWT } from "passport-jwt";
 import { SECRET_JWT } from "./tokenSign";
 import { gateway } from "../gateway/basics";
+import { UserRole } from "../interactors/utils";
 
 export enum AuthStrategy {
   LOCAL_STRATEGY = "local",
@@ -21,7 +22,25 @@ export const LocalStrategy = new StrategyLocal(
       if (!isMatch) {
         done(unauthorized(), false);
       }
-      done(null, user);
+
+      switch (user.role) {
+        case UserRole.STUDENT: {
+          const student = await gateway.findStudentByUserId(user.id);
+          done(null, { user, student });
+          break;
+        }
+
+        case UserRole.TEACHER: {
+          const teacher = await gateway.findTeacherByUserId(user.id);
+          done(null, { teacher, user });
+          break;
+        }
+
+        case UserRole.ADMIN: {
+          const admin = await gateway.findAdminByUserId(user.id);
+          done(null, { admin, user });
+        }
+      }
     } catch (error) {
       done(error, false);
     }
