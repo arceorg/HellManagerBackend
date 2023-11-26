@@ -3,6 +3,7 @@ import { AuthStrategy, checkAuthWith } from "../../auth/strategies";
 import { getAvailableEnrollmentsByStudentController } from "../enrolment/getAvailableEnrollmentsByStudentController";
 import { saveEnrollmentController } from "../enrolment/saveEnrollmentController";
 import { getEnrollmentsByStudentController } from "../enrolment/getEnrollmentsByStudentController";
+import { deleteEnrollmentByIdController } from "../enrolment/deleteEnrollmentByIdController";
 
 export const enrollmentRouter = Router();
 
@@ -17,4 +18,4 @@ enrollmentRouter.get(
   checkAuthWith([AuthStrategy.JWT_STRATEGY]),
   getAvailableEnrollmentsByStudentController
 );
-enrollmentRouter.delete("/:enrolmentId", checkAuthWith([AuthStrategy.JWT_STRATEGY]));
+enrollmentRouter.delete("/:enrollmentId", checkAuthWith([AuthStrategy.JWT_STRATEGY]), deleteEnrollmentByIdController);

@@ -1,5 +1,5 @@
 import { findCareerById, saveCareer } from "./career";
-import { saveEnrollment, findEnrollmentsByStudentId } from "./enrollment";
+import { saveEnrollment, findEnrollmentsByStudentId, deleteEnrollmentById } from "./enrollment";
 import { findGroupById, saveGroup } from "./group";
 import { findNotesByStudentId, saveNote, findNoteById } from "./note";
 import { saveNoteStudent, findNoteStudentById } from "./noteStudent";
@@ -30,4 +30,5 @@ export const gateway = {
   findSchedulesByGroupIds,
   saveEnrollment,
   findEnrollmentsByStudentId,
+  deleteEnrollmentById,
 };

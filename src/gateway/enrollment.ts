@@ -12,3 +12,7 @@ export const findEnrollmentsByStudentId = async (studentId: string): Promise<Enr
   });
   return enrollments;
 };
+
+export const deleteEnrollmentById = async (enrollmentId: string): Promise<void> => {
+  await AppDataSource.manager.delete(Enrollment, { id: enrollmentId });
+};
